@@ -1,35 +1,34 @@
 #include <stdio.h>
+#include <math.h>
 #include <assert.h>
-#include <cctype>
-#include <TXLib.h>
 
-#include "myfunctions.h"
-#include "myconstants.h"
+#include "Functions.h"
+#include "Constants.h"
 
-enum CompareResult
+int CompareDoubles(double val1, double val2)
 {
-    LESS  = -1,
-    EQUAL =  0,
-    MORE  =  1
-};
-
-CompareResult CompareDoubles(double val1, double val2)
-{
-   if (fabs(val1 - val2) <= PRECISION)
-   {
+    if(isnan(val1) && isnan(val2))
+    {
         return EQUAL;
-   }
-   else if (val1 - val2 < 0)
-   {
+    }
+    if(fabs(val1 - val2) <= PRECISION)
+    {
+        return EQUAL;
+    }
+    else if (val1 - val2 < 0)
+    {
         return LESS;
-   }
-   else
-   {
+    }
+    else
+    {
         return MORE;
-   }
+    }
 }
 
 bool IsZero(double val)
 {
+    assert(isnan(val));
     return (fabs(val) <= PRECISION);
 }
+
+
