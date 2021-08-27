@@ -1,0 +1,15 @@
+#ifndef MYCONSTANTS_H_INCLUDED
+#define MYCONSTANTS_H_INCLUDED
+
+const double PRECISION = 0.001;
+enum STATUS_OF_SOLVE_EQUATION
+{
+    BAD_ROOT_ADDR = -2,
+    BAD_ENTERED_DATA = -1,
+    NO_ROOT = 0,
+    ONE_ROOT = 1,
+    TWO_ROOT = 2,
+    INF_ROOT = 3
+};
+
+#endif // MYCONSTANTS_H_INCLUDED
